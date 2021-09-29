@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_playground/data_models/line_provider.dart';
 
 class LineFieldBase extends StatelessWidget {
 

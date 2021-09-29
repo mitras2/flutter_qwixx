@@ -21,60 +21,62 @@ class PointsLine extends StatelessWidget {
       ),
       child: Consumer<PointsProvider>(
         builder: (context, points, child) {
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02),
-                    child: const Text("Punkte"),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      PointsField(
-                          pointsText: game.lines[0].linePoints.toString(),
-                          pointsColor: game.lines[0].lineColor
-                      ),
-                      PointsField(
-                          pointsText: game.lines[1].linePoints.toString(),
-                          pointsColor: game.lines[1].lineColor
-                      ),
-                      PointsField(
-                          pointsText: game.lines[2].linePoints.toString(),
-                          pointsColor: game.lines[2].lineColor
-                      ),
-                      PointsField(
-                          pointsText: game.lines[3].linePoints.toString(),
-                          pointsColor: game.lines[3].lineColor
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(right: MediaQuery.of(context).size.height * 0.02),
-                        child: const Text("-", ),
-                      ),
-                      PointsField(pointsText: points.pointsFromFails.toString()),
-                      Container(
-                        margin: EdgeInsets.only(right: MediaQuery.of(context).size.height * 0.02),
-                        child: const Text("="),
-                      ),
-                      PointsField(pointsText: points.points.toString())
-                    ],
-                  ),
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02),
-                    child: const Text("Fehlwürfe"),
-                  ),
-                  PointsFails(points: points)
-                ],
-              )
-            ],
+          return SafeArea(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02),
+                      child: const Text("Punkte"),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        PointsField(
+                            pointsText: game.lines[0].linePoints.toString(),
+                            pointsColor: game.lines[0].lineColor
+                        ),
+                        PointsField(
+                            pointsText: game.lines[1].linePoints.toString(),
+                            pointsColor: game.lines[1].lineColor
+                        ),
+                        PointsField(
+                            pointsText: game.lines[2].linePoints.toString(),
+                            pointsColor: game.lines[2].lineColor
+                        ),
+                        PointsField(
+                            pointsText: game.lines[3].linePoints.toString(),
+                            pointsColor: game.lines[3].lineColor
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(right: MediaQuery.of(context).size.height * 0.02),
+                          child: const Text("-", ),
+                        ),
+                        PointsField(pointsText: points.pointsFromFails.toString()),
+                        Container(
+                          margin: EdgeInsets.only(right: MediaQuery.of(context).size.height * 0.02),
+                          child: const Text("="),
+                        ),
+                        PointsField(pointsText: points.points.toString())
+                      ],
+                    ),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.02),
+                      child: const Text("Fehlwürfe"),
+                    ),
+                    PointsFails(points: points)
+                  ],
+                )
+              ],
+            )
           );
         },
       ),

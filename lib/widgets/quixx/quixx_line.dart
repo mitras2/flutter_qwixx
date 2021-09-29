@@ -12,35 +12,40 @@ class QwixxLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Consumer<LineProvider>(
+    return Consumer<LineProvider>(
         builder: (context, line, child) {
           return Container(
-            color: line.lineColor,
-            padding: EdgeInsets.symmetric(
-              vertical: MediaQuery.of(context).size.height * 0.02,
-              horizontal: MediaQuery.of(context).size.height * 0.05,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                LineField(line: line, index: 0, lineFieldsTextReverse: reverse),
-                LineField(line: line, index: 1, lineFieldsTextReverse: reverse),
-                LineField(line: line, index: 2, lineFieldsTextReverse: reverse),
-                LineField(line: line, index: 3, lineFieldsTextReverse: reverse),
-                LineField(line: line, index: 4, lineFieldsTextReverse: reverse),
-                LineField(line: line, index: 5, lineFieldsTextReverse: reverse),
-                LineField(line: line, index: 6, lineFieldsTextReverse: reverse),
-                LineField(line: line, index: 7, lineFieldsTextReverse: reverse),
-                LineField(line: line, index: 8, lineFieldsTextReverse: reverse),
-                LineField(line: line, index: 9, lineFieldsTextReverse: reverse),
-                LineField(line: line, index: 10, lineFieldsTextReverse: reverse),
-                LineEndField(line: line),
-              ],
-            ),
+              color: line.lineColor,
+              padding: EdgeInsets.symmetric(
+                vertical: MediaQuery.of(context).size.height * 0.04,
+                horizontal: MediaQuery.of(context).size.height * 0.04,
+              ),
+              child: SafeArea(
+                  top: false,
+                  bottom: false,
+                  child: Container (
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        LineField(line: line, index: 0, lineFieldsTextReverse: reverse),
+                        LineField(line: line, index: 1, lineFieldsTextReverse: reverse),
+                        LineField(line: line, index: 2, lineFieldsTextReverse: reverse),
+                        LineField(line: line, index: 3, lineFieldsTextReverse: reverse),
+                        LineField(line: line, index: 4, lineFieldsTextReverse: reverse),
+                        LineField(line: line, index: 5, lineFieldsTextReverse: reverse),
+                        LineField(line: line, index: 6, lineFieldsTextReverse: reverse),
+                        LineField(line: line, index: 7, lineFieldsTextReverse: reverse),
+                        LineField(line: line, index: 8, lineFieldsTextReverse: reverse),
+                        LineField(line: line, index: 9, lineFieldsTextReverse: reverse),
+                        LineField(line: line, index: 10, lineFieldsTextReverse: reverse),
+                        LineEndField(line: line),
+                      ],
+                    ),
+                  )
+              )
           );
         },
-      ),
     );
   }
 }

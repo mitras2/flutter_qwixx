@@ -20,40 +20,35 @@ class QuixxScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: const Text('Qwixx'),
-      ),
       body: Consumer<GameProvider>(
-        builder: (context, game, child) {
-          Future.delayed(Duration.zero, () => showDialog(context, game));
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              ChangeNotifierProvider<LineProvider>.value(
-                value: game.lines[0], 
-                child: const QwixxLine()
-              ),
-              ChangeNotifierProvider<LineProvider>.value(
-                  value: game.lines[1],
-                  child: const QwixxLine()
-              ),
-              ChangeNotifierProvider<LineProvider>.value(
-                  value: game.lines[2],
-                  child: const QwixxLine(reverse: true)
-              ),
-              ChangeNotifierProvider<LineProvider>.value(
-                  value: game.lines[3],
-                  child: const QwixxLine(reverse: true)
-              ),
-              ChangeNotifierProvider<PointsProvider>.value(
-                  value: game.points,
-                  child: PointsLine(game: game)
-              ),
-            ],
-          );
-        },
+          builder: (context, game, child) {
+            Future.delayed(Duration.zero, () => showDialog(context, game));
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                ChangeNotifierProvider<LineProvider>.value(
+                    value: game.lines[0],
+                    child: const QwixxLine()
+                ),
+                ChangeNotifierProvider<LineProvider>.value(
+                    value: game.lines[1],
+                    child: const QwixxLine()
+                ),
+                ChangeNotifierProvider<LineProvider>.value(
+                    value: game.lines[2],
+                    child: const QwixxLine(reverse: true)
+                ),
+                ChangeNotifierProvider<LineProvider>.value(
+                    value: game.lines[3],
+                    child: const QwixxLine(reverse: true)
+                ),
+                ChangeNotifierProvider<PointsProvider>.value(
+                    value: game.points,
+                    child: PointsLine(game: game)
+                ),
+              ],
+            );
+          },
       )
     );
   }
