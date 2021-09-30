@@ -6,7 +6,14 @@ class LineEndField extends StatelessWidget {
   final LineProvider line;
 
   String get _fieldText{
-    return line.lineFinished == LineClosedState.open? '' : 'X';
+    switch (line.lineFinished) {
+      case LineClosedState.open:
+        return "";
+      case LineClosedState.closedNoBonus:
+        return "-";
+      case LineClosedState.closedWithBonus:
+        return "X";
+    }
   }
   
   void _toggleField() {
@@ -20,7 +27,8 @@ class LineEndField extends StatelessWidget {
     return LineFieldBase(
         fieldText: _fieldText,
         fieldEnabled: true,
-        onToggle: _toggleField
+        onToggle: _toggleField,
+        lineColor: Colors.black26,
     );
   }
 }

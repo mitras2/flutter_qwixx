@@ -47,8 +47,8 @@ class GameProvider extends ChangeNotifier {
 
   void _reset() {
     var lineRed = LineProvider(this, const Color.fromRGBO(255, 0, 0, 1));
-    var lineYellow = LineProvider(this, const Color.fromRGBO(255, 238, 0, 1.0));
-    var lineGreen = LineProvider(this, const Color.fromRGBO(0, 255, 0, 1));
+    var lineYellow = LineProvider(this, const Color.fromRGBO(255, 200, 0, 1.0));
+    var lineGreen = LineProvider(this, const Color.fromRGBO(35, 184, 49, 1.0));
     var lineBlue = LineProvider(this, const Color.fromRGBO(0, 0, 255, 1));
     _lines = [lineRed, lineYellow, lineGreen, lineBlue];
     _points = PointsProvider(this);

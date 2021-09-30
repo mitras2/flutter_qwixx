@@ -32,6 +32,7 @@ class LineField extends StatelessWidget {
       fieldEnabled: line.isFieldToggleable(index),
       fieldText: _fieldText,
       onToggle: _toggleField,
+      lineColor: line.lineColor,
     );
   }
 }

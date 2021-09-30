@@ -46,7 +46,12 @@ class PointsFailsField extends StatelessWidget {
           child: TextButton(
             onPressed: () => toggleSelect(),
             child: Text(
-              fieldText
+              fieldText,
+              style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: MediaQuery.of(context).size.height * 0.04,
+                  fontWeight: FontWeight.bold
+              )
             ),
           )
       )

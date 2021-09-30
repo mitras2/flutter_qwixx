@@ -60,7 +60,7 @@ class PointsLine extends StatelessWidget {
                           margin: EdgeInsets.only(right: MediaQuery.of(context).size.height * 0.02),
                           child: const Text("="),
                         ),
-                        PointsField(pointsText: points.points.toString())
+                        PointsField(pointsText: points.points.toString(), extraWide: true,)
                       ],
                     ),
                   ],
